@@ -12,7 +12,7 @@ def uniqueCuisine(dframe):
 	global cuisine_u_ct
 	global type_u_ct
 	
-	#Get unique values from "Cuisine column 
+	#Get unique values from "Cuisine" column 
 	df_cuisine_unique = df['Cuisine'].unique()
 	#print(df_cuisine_unique)
 	cuisine_u_ct = len(df_cuisine_unique)
@@ -68,7 +68,8 @@ def selectValues():
 	print(cvalue)
 	print(tvalue)
 	print(dvalue)
-		
+	
+	#Selection logic	
 	if pref == "I want":
 		print("Like")
 		#Build logic for selection
@@ -95,8 +96,6 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	global lb2
 	global ckb
 	
-	#Actions for Events
-	
 	#Window title
 	m.title("Important Task of the Day")
 
@@ -116,7 +115,7 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	for item in cuisine:
 		lb.insert(END, item)
 
-	#Insert unique "Type" Items.  Would like to change to have a max of 10 with scrollbar
+	#Insert unique "Specialty" Items.  Would like to change to have a max of 10 with scrollbar
 	lb1 = Listbox(m, height=typect, selectmode=MULTIPLE, exportselection=0) #selectmode=MULTIPLE
 	for item in type:
 		lb1.insert(END,item)
@@ -135,7 +134,7 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	btn1 = Button(m, text='Clear', width=12, command=resetValues) #command=printName
 
 	
-	#GUI Layout
+	#GUI Layout.  Need scrollbars on listboxes
 	lbl0.grid(columnspan = 4) #Set columnspan to max number of columns?
 	#lbl.grid(row=2, column = 0)
 	lblCuisine.grid(row = 1, column = 1)
@@ -148,7 +147,7 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	lb.grid(row = 2, column = 1, sticky=N)
 	lb1.grid(row = 2, column= 2, sticky=N)
 	lb2.grid(row = 2, column = 3, sticky=N)
-	btn.grid(row=5, column=3, sticky=E + S)    #Set columnspan to max number of columns?
+	btn.grid(row=5, column=3, sticky=E + S)   
 	btn1.grid(row=5, column=2, sticky=E + S)
 	#scrollbar.grid(row=2, column=1, sticky=N+S)
 
