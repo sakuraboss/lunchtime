@@ -112,6 +112,7 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	global lb1
 	global lb2
 	global ckb
+	global var1
 	
 	#Window title
 	m.title("Important Task of the Day")
