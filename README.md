@@ -6,8 +6,8 @@ This is a tool that will search for a lunch venue based on what a user wants/doe
 In progress:
 
 1)  Scroll bars on the listboxes with a view of 10 items
-2)  Logic for the selections made
+2)  Logic for the selections made (need to include fast food and logic for distance selection)
 3)  A button that will make a random selection
 4)  make "preference" field required
 5)  Create a frame for results that will clear with the "Clear" button
-6)  Add Fast Food logic
+
