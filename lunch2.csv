@@ -1,0 +1,31 @@
+Name,Cuisine,Specialty,FF,DistMiles
+Machete's,American,Sandwiches,FALSE,1
+Wingstop,American,Southern,FALSE,1
+Max's of Manilla,Filipino,Plate Lunch,FALSE,2
+Highway Inn,Hawaiian,Plate Lunch,FALSE,4
+Helena's Hawaiian Food,Hawaiian,Plate Lunch,FALSE,2
+Big Kahuna's Pizza,Italian,Pizza,FALSE,3
+Marukai,Japanese,Bentos,FALSE,1
+Ninja Sushi,Japanese,Sushi,FALSE,3
+Yummy's BBQ,Korean,Plate Lunch,FALSE,4
+Taco Del Mar,Mexican,Tacos,FALSE,4
+Ranch 99,Mixed,Food Court,FALSE,2
+NEX,Mixed,Food Court,FALSE,4
+Ethel's Grill,Mixed,Plate Lunch,FALSE,1
+Pongo's,Mixed,Plate Lunch,FALSE,1
+Alicia's Market,Mixed,Plate Lunch,FALSE,1
+Mitsu-Ken,Mixed,Plate Lunch,FALSE,2
+Zippy's,Mixed,Plate Lunch,FALSE,1
+Tatsuo's,Mixed,Plate Lunch,FALSE,1
+Thai Village III,Thai,Noodles,FALSE,2
+McDonalds,American,Burgers,TRUE,1
+Ha Long,Vietnamese,Noodles,FALSE,1
+Burger King,American,Burgers,TRUE,1
+Jack n The Box,American,Burgers,TRUE,1
+Popeye's,American,Southern,TRUE,1
+Panda Express,Chinese,Noodles,TRUE,4
+Taco Bell,Mexican,Tacos,TRUE,3
+Masa's Cafeteria,Mixed,Plate Lunch,FALSE,2
+King Kong Lunch Wagon,Mixed,Plate Lunch,FALSE,2
+McDonalds,American,Burgers,TRUE,1
+Chilis,TexMex,Bloomin Onion,FALSE,10
