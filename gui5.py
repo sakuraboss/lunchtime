@@ -60,6 +60,7 @@ def selectValues():
 	cvalue=[lb.get(cdx) for cdx in lb.curselection()]
 	tvalue=[lb1.get(tdx) for tdx in lb1.curselection()]
 	dvalue=[lb2.get(ddx) for ddx in lb2.curselection()]
+	#get Fastfood checkbox item
 			
 	
 	print(pref)
@@ -69,7 +70,10 @@ def selectValues():
 	print(tvalue)
 	print(dvalue)
 	
-	#Selection logic	
+	#Selection logic:  
+	#Distance should be int so selection is <= value
+	#Fast food should be boolean
+	
 	if pref == "I want":
 		print("Like")
 		#Build logic for selection
