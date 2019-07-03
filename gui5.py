@@ -2,20 +2,23 @@ from tkinter import *
 from tkinter import ttk
 import pandas as pd
 
+#import csv to dataframe
 df = pd.read_csv('lunch2.csv')
 
+#Get unique values from .csv columns
 def uniqueCuisine(dframe):
 	global df_cuisine_unique
 	global df_type_unique
 	global cuisine_u_ct
 	global type_u_ct
-
+	
+	#Get unique values from "Cuisine column 
 	df_cuisine_unique = df['Cuisine'].unique()
 	#print(df_cuisine_unique)
 	cuisine_u_ct = len(df_cuisine_unique)
 	print(cuisine_u_ct)
 	
-	
+	#Get Unique Items from "Specialty" column
 	df_type_unique = df['Specialty'].unique()
 	#print(df_type_unique)
 	type_u_ct = len(df_type_unique)
@@ -44,34 +47,37 @@ def selectItems()
 uniqueCuisine(df)
 testPass(df_cuisine_unique, df_type_unique)'''
 
+#Get selected values.  Need to include "Fast Food" option
 def selectValues():
 
-		global pref
-		global cvalue
-		global tvalue
-		global dvalue
+	global pref
+	global cvalue
+	global tvalue
+	global dvalue
 		
-		#print("Hello!")
-		pref=cb.get()
-		cvalue=[lb.get(cdx) for cdx in lb.curselection()]
-		tvalue=[lb1.get(tdx) for tdx in lb1.curselection()]
-		dvalue=[lb2.get(ddx) for ddx in lb2.curselection()]
+	#print("Hello!")
+	pref=cb.get()
+	cvalue=[lb.get(cdx) for cdx in lb.curselection()]
+	tvalue=[lb1.get(tdx) for tdx in lb1.curselection()]
+	dvalue=[lb2.get(ddx) for ddx in lb2.curselection()]
 			
 	
-		print(pref)
-		ctype=type(cvalue)
-		print(ctype)
-		print(cvalue)
-		print(tvalue)
-		print(dvalue)
+	print(pref)
+	ctype=type(cvalue)
+	print(ctype)
+	print(cvalue)
+	print(tvalue)
+	print(dvalue)
 		
-		if pref == "I want":
-			print("Like")
+	if pref == "I want":
+		print("Like")
+		#Build logic for selection
 			
-		elif pref == "I don't want":
-			print("No Like")
+	elif pref == "I don't want":
+		print("No Like")
+		#Build logic for selection
 			
-		
+#Clear items		
 def resetValues():
 	cb.set('')
 	lb.selection_clear(0, END)
@@ -79,11 +85,7 @@ def resetValues():
 	lb2.selection_clear(0, END)
 	ckb.deselect()
 
-
-	
-		
-		
-
+#Build GUI	
 def buildGUI(cuisine, cuisinect, type, typect):
 #Create a GUI Window
 	m = Tk()
@@ -109,12 +111,12 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	cb = ttk.Combobox(m, state="readonly", values = ["I want", "I don't want"])
 	#entry_1 = Entry(m)
 	
-	
+	#Insert unique "Cuisine" Items.  Would like to change to have a max of 10 with scrollbar
 	lb = Listbox(m, height=cuisinect, selectmode=MULTIPLE, exportselection=0)  #selectmode=MULTIPLE
 	for item in cuisine:
 		lb.insert(END, item)
 
-
+	#Insert unique "Type" Items.  Would like to change to have a max of 10 with scrollbar
 	lb1 = Listbox(m, height=typect, selectmode=MULTIPLE, exportselection=0) #selectmode=MULTIPLE
 	for item in type:
 		lb1.insert(END,item)
@@ -127,11 +129,13 @@ def buildGUI(cuisine, cuisinect, type, typect):
 
 	var1 = IntVar()
 	ckb = Checkbutton(m, text = "Fast Food?", variable = var1)
-
+	
+	#Would like the "Preference" selection to be mandatory.  If not, show error message
 	btn = Button(m, text='Submit', width=12, bg = "green", command=selectValues)
 	btn1 = Button(m, text='Clear', width=12, command=resetValues) #command=printName
 
-	#default column = 0
+	
+	#GUI Layout
 	lbl0.grid(columnspan = 4) #Set columnspan to max number of columns?
 	#lbl.grid(row=2, column = 0)
 	lblCuisine.grid(row = 1, column = 1)
@@ -149,5 +153,6 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	#scrollbar.grid(row=2, column=1, sticky=N+S)
 
 	m.mainloop()
+	
 uniqueCuisine(df)
 buildGUI(df_cuisine_unique, cuisine_u_ct, df_type_unique, type_u_ct)
