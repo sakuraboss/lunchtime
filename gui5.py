@@ -155,3 +155,5 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	
 uniqueCuisine(df)
 buildGUI(df_cuisine_unique, cuisine_u_ct, df_type_unique, type_u_ct)
+#my brain hurts
+
