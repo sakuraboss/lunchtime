@@ -60,7 +60,8 @@ def selectValues():
 	cvalue=[lb.get(cdx) for cdx in lb.curselection()]
 	tvalue=[lb1.get(tdx) for tdx in lb1.curselection()]
 	dvalue=[lb2.get(ddx) for ddx in lb2.curselection()]
-	#get Fastfood checkbox item
+	ff=var1.get()
+	
 			
 	
 	print(pref)
@@ -69,18 +70,30 @@ def selectValues():
 	print(cvalue)
 	print(tvalue)
 	print(dvalue)
+	print(ff)
 	
-	#Selection logic:  
 	#Distance should be int so selection is <= value
-	#Fast food should be boolean
 	
-	if pref == "I want":
-		print("Like")
+	if pref == '':
+		print("Preference required")
+		
+	elif pref == "I want" and ff == 1: #AND Fast Food is true, print all where distance is <= value
+		#where distance is >=
+			print("I Like Fast Food")
 		#Build logic for selection
+	
+	elif pref == "I want" and ff == 0:  #AND Fast Food is false, print all where distance is <=value
+		#where distance is >=
+			print("No fast food for me")
+		
+	elif pref == "I don't want" and ff == 1:  #AND Fast Food is true, print inverse where distance is <= value
+		#where distance is >=
+			print("I don't want any of this but I want fast food")
+		
+	elif pref == "I don't want" and ff == 0:
+		#where distance is >=
+			print("I don't want any of this and I don't want fast food either")
 			
-	elif pref == "I don't want":
-		print("No Like")
-		#Build logic for selection
 			
 #Clear items		
 def resetValues():
