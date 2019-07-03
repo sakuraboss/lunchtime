@@ -1,7 +1,3 @@
-#Scroll bars on list boxes and limit display of 10 items
-#Match logic
-#Command calls
-
 from tkinter import *
 from tkinter import ttk
 import pandas as pd
