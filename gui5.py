@@ -66,6 +66,9 @@ def selectValues():
 	cuisine = df['Cuisine']	
 	lenCuisine = (len(cvalue))
 	
+	x = 0						
+	y = lenCuisine
+	
 	#create another iteration for type of food	
 	for x in range(y):	
 	
