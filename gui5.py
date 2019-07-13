@@ -54,24 +54,32 @@ def selectValues():
 	global cvalue
 	global tvalue
 	global dvalue
-		
-	#print("Hello!")
+	
+	EmptyDF = pd.DataFrame(columns=['Name', 'Cuisine', 'Specialty', 'FF', 'DistMiles'])
+	
 	pref=cb.get()
 	cvalue=[lb.get(cdx) for cdx in lb.curselection()]
 	tvalue=[lb1.get(tdx) for tdx in lb1.curselection()]
 	dvalue=[lb2.get(ddx) for ddx in lb2.curselection()]
 	ff=var1.get()
 	
+	cuisine = df['Cuisine']	
+	lenCuisine = (len(cvalue))
+	
+	#create another iteration for type of food	
+	for x in range(y):	
+	
+		#create a container for items where df value is equal to list index value
+		selectCuisine = cuisine==cvalue[x] 
+		
+		#create a new data frame with matched items
+		cuisine0 = df[selectCuisine] 
+		
+		#merge dataframes
+		EmptyDF = pd.concat([cuisine0, EmptyDF]) 
+	
+	print(EmptyDF.head(20)) #need to set to.....
 			
-	
-	print(pref)
-	ctype=type(cvalue)
-	print(ctype)
-	print(cvalue)
-	print(tvalue)
-	print(dvalue)
-	print(ff)
-	
 	#Distance should be int so selection is <= value
 	
 	if pref == '':
@@ -107,6 +115,7 @@ def resetValues():
 def buildGUI(cuisine, cuisinect, type, typect):
 #Create a GUI Window
 	m = Tk()
+	global m
 	global cb
 	global lb
 	global lb1
