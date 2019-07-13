@@ -114,7 +114,7 @@ def resetValues():
 #Build GUI	
 def buildGUI(cuisine, cuisinect, type, typect):
 #Create a GUI Window
-	m = Tk()
+	
 	global m
 	global cb
 	global lb
@@ -123,6 +123,7 @@ def buildGUI(cuisine, cuisinect, type, typect):
 	global ckb
 	global var1
 	
+	m = Tk()
 	#Window title
 	m.title("Important Task of the Day")
 
